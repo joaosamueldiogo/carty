@@ -54,6 +54,7 @@ export default function Gallery({ data }: GalleryProps) {
                 height={300}
                 src={item.image}
                 alt={`Slide ${index + 1}`}
+                loading="eager"
               />
             </div>
           </div>

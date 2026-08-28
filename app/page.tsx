@@ -1,7 +1,9 @@
+import Gallery, { GalleryItem } from "@/components/Gallery";
+import { Navbar } from "@/components/Navbar";
+import { fetchProducts } from "@/utils/actions/products.action";
 
-import Gallery, { GalleryItem } from '@/components/Gallery'
-import { Navbar } from '@/components/Navbar'
-
+const allProducts = await fetchProducts();
+console.log("All Products:", allProducts);
 
 export default function page() {
   const galleryData: GalleryItem[] = [
@@ -15,7 +17,7 @@ export default function page() {
       title: "Capa de computador: Proteção e estilo para o seu dispositivo",
       buttonText: "Explore",
     },
-  ]
+  ];
 
   return (
     <div>
@@ -24,5 +26,5 @@ export default function page() {
         <Gallery data={galleryData} />
       </div>
     </div>
-  )
+  );
 }
