@@ -1,5 +1,7 @@
 import Gallery, { GalleryItem } from "@/components/Gallery";
+import HomeProducts from "@/components/HomeProducts";
 import { Navbar } from "@/components/Navbar";
+import { ProductParams } from "@/shared.types";
 import { fetchProducts } from "@/utils/actions/products.action";
 
 const allProducts = await fetchProducts();
@@ -24,6 +26,8 @@ export default function page() {
       <Navbar />
       <div>
         <Gallery data={galleryData} />
+
+        <HomeProducts products={allProducts} />
       </div>
     </div>
   );

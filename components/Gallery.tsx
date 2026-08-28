@@ -49,7 +49,7 @@ export default function Gallery({ data }: GalleryProps) {
             </div>
             <div className="flex items-center justify-center">
               <Image
-                className="md:w-72 w-48"
+                className="md:w-72 w-48 lg:w-96"
                 width={300}
                 height={300}
                 src={item.image}
