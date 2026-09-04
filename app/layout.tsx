@@ -8,6 +8,8 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { Navbar } from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const merriweatherHeading = Merriweather({
   subsets: ["latin"],
@@ -45,8 +47,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         merriweatherHeading.variable,
       )}
     >
-      <body className="min-h-full flex flex-col bg-muted/95 dark:bg-background">
+      <body className="min-h-full flex flex-col bg-muted dark:bg-background">
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

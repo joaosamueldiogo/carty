@@ -23,7 +23,6 @@ export default function page() {
 
   return (
     <div>
-      <Navbar />
       <div>
         <Gallery data={galleryData} />
 

@@ -19,7 +19,7 @@ const navigationMenuItems = [
 
 export function Navbar() {
   return (
-    <NavigationMenu className="relative flex w-full items-center justify-between px-4 py-2 bg-background shadow-md">
+    <NavigationMenu className="justify-between w-full h-14 px-4 py-2 bg-background shadow-md">
       <Link href="/" className="text-xl font-bold">
         Carty
       </Link>

@@ -20,17 +20,21 @@ export async function fetchProductById(
   id: string,
 ): Promise<ProductParams | null> {
   const supabase = await createClient();
+  try {
+    const { data: product, error } = await supabase
+      .from("products")
+      .select("*")
+      .eq("id", id)
+      .single();
 
-  const { data: product, error } = await supabase
-    .from("products")
-    .select("*")
-    .eq("id", id)
-    .single();
+    if (error) {
+      console.error("Error fetching product by ID:", error);
+      return null;
+    }
 
-  if (error) {
+    return product;
+  } catch (error) {
     console.error("Error fetching product by ID:", error);
     return null;
   }
-
-  return product;
 }
